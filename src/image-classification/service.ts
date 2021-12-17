@@ -1,4 +1,4 @@
-import mobilenetClassificationUtil from '../utils/mobilenet-classification.util';
+import classification from '../utils/classification';
 
 export interface IImageFile {
   data: Buffer;
@@ -14,7 +14,7 @@ class Service {
         `Expected image (${this.SUPPORTED_IMAGE_TYPES}), but got ${image.mimetype}`,
       );
     }
-    return mobilenetClassificationUtil.classify(image.data, 10);
+    return classification.classify(image.data, 10);
   }
 }
 
